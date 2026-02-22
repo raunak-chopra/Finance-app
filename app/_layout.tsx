@@ -52,13 +52,12 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-        {/* Helper screens for tools */}
-        <Stack.Screen name="tools/fire-calculator" options={{ title: 'F.I.R.E. Calculator' }} />
-        <Stack.Screen name="tools/net-worth" options={{ title: 'Net Worth' }} />
-        <Stack.Screen name="tools/rental-yield" options={{ title: 'Rental Yield' }} />
-        <Stack.Screen name="tools/add-asset" options={{ title: 'Add Asset', presentation: 'modal' }} />
-        <Stack.Screen name="tools/add-liability" options={{ title: 'Add Liability', presentation: 'modal' }} />
+        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Add Transaction' }} />
+        <Stack.Screen name="tools/fire-calculator" options={{ headerShown: true }} />
+        <Stack.Screen name="tools/net-worth" options={{ headerShown: true }} />
+        <Stack.Screen name="tools/rental-yield" options={{ headerShown: true }} />
+        <Stack.Screen name="tools/add-asset" options={{ presentation: 'modal', headerShown: true }} />
+        <Stack.Screen name="tools/add-liability" options={{ presentation: 'modal', headerShown: true }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

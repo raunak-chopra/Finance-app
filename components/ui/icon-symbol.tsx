@@ -22,6 +22,9 @@ const MAPPING = {
   'chart.pie.fill': 'pie-chart',
   'faceid': 'face',
   'lock': 'lock',
+  'flame': 'whatshot',
+  'chart.bar.fill': 'bar-chart',
+  'house': 'home',
 } as IconMapping;
 
 /**

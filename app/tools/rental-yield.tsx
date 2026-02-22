@@ -153,7 +153,7 @@ export default function RentalYieldScreen() {
                                             </View>
                                             <View className="items-end">
                                                 <Text className="font-bold text-green-600">{y.toFixed(2)}% Yield</Text>
-                                                <Text className="text-xs text-muted-foreground">Rent: {p.rent || 0}/m</Text>
+                                                <Text className="text-xs text-muted-foreground">Rent: ₹{p.monthly_rent || 0}/m</Text>
                                             </View>
                                         </CardContent>
                                     </Card>

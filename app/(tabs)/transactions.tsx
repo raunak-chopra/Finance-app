@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState, useCallback } from 'react';
 import { parseSMS, ParsedTransaction } from '@/lib/sms-parser';
+import { categorizeTransaction } from '@/lib/category-rules';
 import { db } from '@/db/client';
 import { transactions } from '@/db/schema';
 import { desc, eq, and, like, SQL } from 'drizzle-orm';
@@ -70,12 +71,14 @@ export default function TransactionsScreen() {
     if (!parsedData) return;
 
     try {
+      const category = categorizeTransaction(parsedData.merchant);
+
       await db.insert(transactions).values({
         id: Crypto.randomUUID(),
         merchant: parsedData.merchant,
         amount: parsedData.amount, // Schema handles positive amount + type DEBIT/CREDIT
         date: parsedData.date,
-        category: 'Uncategorized',
+        category: category,
         type: parsedData.type,
         source: 'MANUAL_SMS',
         is_personal: true,

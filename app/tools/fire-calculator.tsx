@@ -21,7 +21,7 @@ export default function FireCalculatorScreen() {
 
     useEffect(() => {
         calculateFire();
-    }, [monthlyExpense, currentSavings, withdrawalRate]);
+    }, [monthlyExpense, currentSavings, withdrawalRate, returnRate]);
 
     const calculateFire = () => {
         const expense = parseFloat(monthlyExpense) || 0;
